@@ -63,6 +63,15 @@ kubectl v1.30.0
 ```
 1. Создаю сервисный аккаунт и выдаю ему роль:
 
+![изображение](https://github.com/user-attachments/assets/8e13d627-2ef6-4b43-b5e4-d5bcc964fc24)
+
+![изображение](https://github.com/user-attachments/assets/72371671-6e09-412c-929d-fc22cb8d5069)
+
+2. Подготавливаю backend для terraform:
+
+
+
+
 
 
 ---
