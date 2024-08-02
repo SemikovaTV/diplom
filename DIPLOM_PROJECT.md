@@ -67,10 +67,17 @@ kubectl v1.30.0
 
 ![изображение](https://github.com/user-attachments/assets/72371671-6e09-412c-929d-fc22cb8d5069)
 
-2. Подготавливаю backend для terraform:
+2. Подготавливаю backend для terraform, буду использовать рекомендованный вариант: S3 bucket в созданном ЯО аккаунте(создание бакета через TF)
 
+![изображение](https://github.com/user-attachments/assets/22033844-1836-42d3-8ac1-511f0ea4479a)
 
+3. Создаю VPC с подсетями в разных зонах доступности:
 
+![изображение](https://github.com/user-attachments/assets/ae4660f8-3475-4bf9-a9cc-65f27ef86a9d)
+
+4. Повторное выполнение команды `terraform apply` :
+
+![изображение](https://github.com/user-attachments/assets/242f2e6b-b7e4-41fe-bef0-b1a35cde5f04)
 
 
 
