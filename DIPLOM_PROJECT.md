@@ -73,7 +73,8 @@ kubectl v1.30.0
 
 3. Создаю VPC с подсетями в разных зонах доступности:
 
-![изображение](https://github.com/user-attachments/assets/ae4660f8-3475-4bf9-a9cc-65f27ef86a9d)
+![image](https://github.com/user-attachments/assets/3d4cea6f-3d9c-45cd-8d4f-1b209971ca94)
+
 
 4. Повторное выполнение команды `terraform apply` :
 
@@ -101,6 +102,14 @@ kubectl v1.30.0
 1. Работоспособный Kubernetes кластер.
 2. В файле `~/.kube/config` находятся данные для доступа к кластеру.
 3. Команда `kubectl get pods --all-namespaces` отрабатывает без ошибок.
+
+
+### Ответ
+Создаю три виртуальных машины в рахных зонах доступности:
+
+![image](https://github.com/user-attachments/assets/f3ff23ea-33b8-454e-9284-79c8517198b9)
+
+Для подготовки ansible-конфигурации буду использовать kubespray
 
 ---
 ### Создание тестового приложения
