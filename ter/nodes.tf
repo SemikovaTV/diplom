@@ -1,6 +1,7 @@
 resource "yandex_compute_instance" "node-1" {
   name        = "node-1"
   platform_id = "standard-v1"
+  zone = var.zone2
   resources {
     cores         = 4
     memory        = 4
@@ -30,7 +31,8 @@ resource "yandex_compute_instance" "node-1" {
 }
 resource "yandex_compute_instance" "node-2" {
   name        = "node-2"
-  platform_id = "standard-v1"
+  platform_id = "standard-v2"
+  zone = var.zone3
   resources {
     cores         = 4
     memory        = 4
