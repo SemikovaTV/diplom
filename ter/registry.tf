@@ -1,8 +1,6 @@
 resource "yandex_container_registry" "registry" {
   name = "docker-registry"
   folder_id = var.folder_id
-  labels = {
-  }
 }
 resource "yandex_container_registry_ip_permission" "my_ip_permission" {
   registry_id = yandex_container_registry.registry.id
