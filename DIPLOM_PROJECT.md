@@ -144,6 +144,15 @@ Cоздаю директорию для хранения файла конфиг
 
 1. Git репозиторий с тестовым приложением и Dockerfile.
 2. Регистри с собранным docker image. В качестве регистри может быть DockerHub или [Yandex Container Registry](https://cloud.yandex.ru/services/container-registry), созданный также с помощью terraform.
+3. 
+
+
+
+
+
+![изображение](https://github.com/user-attachments/assets/0b40dc7d-ca9b-4650-95df-8a30a17176fd)
+
+
 
 ---
 ### Подготовка cистемы мониторинга и деплой приложения
