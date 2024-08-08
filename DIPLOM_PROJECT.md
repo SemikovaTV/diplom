@@ -153,6 +153,12 @@ Cоздаю директорию для хранения файла конфиг
 ![изображение](https://github.com/user-attachments/assets/0b40dc7d-ca9b-4650-95df-8a30a17176fd)
 
 
+![изображение](https://github.com/user-attachments/assets/52c58446-785c-4d3c-a728-503c6d3acb50)
+
+
+![изображение](https://github.com/user-attachments/assets/d846a3e1-70a5-4110-a7ae-aac2795b76d8)
+
+
 
 ---
 ### Подготовка cистемы мониторинга и деплой приложения
