@@ -152,11 +152,16 @@ Cоздаю директорию для хранения файла конфиг
 
 ![изображение](https://github.com/user-attachments/assets/0b40dc7d-ca9b-4650-95df-8a30a17176fd)
 
-
-![изображение](https://github.com/user-attachments/assets/52c58446-785c-4d3c-a728-503c6d3acb50)
-
+![изображение](https://github.com/user-attachments/assets/a715189e-cd6e-4e0a-91ae-51454a01deb2)
 
 ![изображение](https://github.com/user-attachments/assets/d846a3e1-70a5-4110-a7ae-aac2795b76d8)
+
+![изображение](https://github.com/user-attachments/assets/d095e9aa-442e-4355-8f7d-825cb5837e49)
+
+![изображение](https://github.com/user-attachments/assets/abf1b5c0-5bd3-48d2-985a-8bd883f90d84)
+
+[Git репозиторий с тестовым приложением и Dockerfile](https://github.com/SemikovaTV/test_app)
+
 
 
 
