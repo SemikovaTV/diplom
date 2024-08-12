@@ -204,6 +204,33 @@ Cоздаю директорию для хранения файла конфиг
 
 ![изображение](https://github.com/user-attachments/assets/dc1d2faf-6696-4deb-88af-d692a502d842)
 
+Вижу, что сервисы stable-grafana и stable-kube-prometheus-sta-prometheus име.т формат ClusterIP и не будут мне доступны из интернета, поэтому меняю им значения на NodePort:
+
+stable-grafana:
+
+![изображение](https://github.com/user-attachments/assets/259d8cdb-b65f-4bf6-a9ef-daa2e114dcd6)
+
+stable-kube-prometheus-sta-prometheus:
+
+![изображение](https://github.com/user-attachments/assets/0418d8b1-4c99-4fc0-8e31-ffeb7d084887)
+
+Результат:
+
+![изображение](https://github.com/user-attachments/assets/d0d7dfb0-b6fd-491e-a939-458f873da4a9)
+
+Проверяю:
+
+Graphana:
+
+![изображение](https://github.com/user-attachments/assets/6fc9be41-3b51-48ad-9373-91dbe2d75cd6)
+
+Prometheus:
+
+![изображение](https://github.com/user-attachments/assets/426391c5-f143-4279-91c2-84f39fe10b6a)
+
+
+
+
 
 
 
