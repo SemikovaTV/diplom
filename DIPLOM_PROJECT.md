@@ -204,7 +204,7 @@ Cоздаю директорию для хранения файла конфиг
 
 ![изображение](https://github.com/user-attachments/assets/dc1d2faf-6696-4deb-88af-d692a502d842)
 
-Вижу, что сервисы stable-grafana и stable-kube-prometheus-sta-prometheus име.т формат ClusterIP и не будут мне доступны из интернета, поэтому меняю им значения на NodePort:
+Вижу, что сервисы stable-grafana и stable-kube-prometheus-sta-prometheus имеют формат ClusterIP и не будут мне доступны из интернета, поэтому меняю им значения на NodePort:
 
 stable-grafana:
 
@@ -220,7 +220,7 @@ stable-kube-prometheus-sta-prometheus:
 
 Проверяю:
 
-Graphana:
+Grafana:
 
 ![изображение](https://github.com/user-attachments/assets/6fc9be41-3b51-48ad-9373-91dbe2d75cd6)
 
