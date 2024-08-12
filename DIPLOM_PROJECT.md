@@ -186,6 +186,33 @@ Cоздаю директорию для хранения файла конфиг
 3. Дашборды в grafana отображающие состояние Kubernetes кластера.
 4. Http доступ к тестовому приложению.
 
+### Ответ
+
+Подключаюсь к master-node, создаю namespace monitoring:
+
+![изображение](https://github.com/user-attachments/assets/4fbb7c49-3f03-4f34-ab0b-e374e6b9ded8)
+
+добавляю и обновляю helm репозиторий prometheus-community:
+
+![изображение](https://github.com/user-attachments/assets/1c858795-d401-409a-932c-5a330842830a)
+
+Устанавливаю helm репозиторий и проверяю:
+
+![изображение](https://github.com/user-attachments/assets/e362835e-e704-438d-bcc8-17b3268877c9)
+
+![изображение](https://github.com/user-attachments/assets/1e3bd1dd-22dd-4bb3-b3e6-50b931413979)
+
+![изображение](https://github.com/user-attachments/assets/dc1d2faf-6696-4deb-88af-d692a502d842)
+
+
+
+
+
+
+
+
+
+
 ---
 ### Установка и настройка CI/CD
 
