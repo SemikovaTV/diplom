@@ -107,7 +107,7 @@ kubectl v1.30.0
 ### Ответ
 Создаю три виртуальных машины в разных зонах доступности:
 
-![image](https://github.com/user-attachments/assets/f3ff23ea-33b8-454e-9284-79c8517198b9)
+![image](https://github.com/user-attachments/assets/b498b949-9929-4bad-a0bd-0a2d68e616da)
 
 Для подготовки ansible-конфигурации буду использовать kubespray. Для этого подниму еще одну виртуальную машину в одной подсети с будущим master:
 
