@@ -111,7 +111,7 @@ kubectl v1.30.0
 
 Для подготовки ansible-конфигурации буду использовать kubespray. Для этого подниму еще одну виртуальную машину в одной подсети с будущим master:
 
-![изображение](https://github.com/user-attachments/assets/b0c4bbb9-3f4a-4b7b-8339-1472639347ee)
+![image](https://github.com/user-attachments/assets/8a211174-9964-4bdd-89aa-b4088ffd3e07)
 
 Устанавливаю kubespray, передаю внутренние ip-адреса будущих нод, запускаю ansible-playbook для развертывания кластера:
 
