@@ -19,10 +19,10 @@ output "external_ip_address_node-2" {
   value = yandex_compute_instance.node-2.network_interface.0.nat_ip_address
 }
 
-output "internal_ip_address_kubespray" {
-  value = yandex_compute_instance.kubespray.network_interface.0.ip_address
+output "internal_ip_address_initial_vm" {
+  value = yandex_compute_instance.initial_vm.network_interface.0.ip_address
 }
 
-output "external_ip_address_kubespray" {
-  value = yandex_compute_instance.kubespray.network_interface.0.nat_ip_address
+output "external_ip_address_initial_vm" {
+  value = yandex_compute_instance.initial_vm.network_interface.0.nat_ip_address
 }

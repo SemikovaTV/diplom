@@ -33,8 +33,8 @@ resource "yandex_compute_instance" "master-node" {
   }
 }
 
-resource "yandex_compute_instance" "kubespray" {
-  name        = "kubespray"
+resource "yandex_compute_instance" "initial_vm" {
+  name        = "initial-vm"
   platform_id = "standard-v1"
   resources {
     cores         = 4
