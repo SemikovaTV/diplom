@@ -119,11 +119,11 @@ kubectl v1.30.0
 
 Cоздаю директорию для хранения файла конфигурации, копирую конфигурационный файл Kubernetes созданную директорию и назначаю права для пользователя на директорию и файл конфигурации.
 
-![изображение](https://github.com/user-attachments/assets/2085e249-83f2-4f56-80f6-20881ebf09a4)
+![image](https://github.com/user-attachments/assets/10c08b78-2363-43e3-a4ce-62e943d4c755)
 
 Проверяю состояние кластера:
 
-![изображение](https://github.com/user-attachments/assets/73345ffe-acc9-488b-ac7a-5f59def58135)
+![image](https://github.com/user-attachments/assets/0920c67a-6956-4656-885b-0240fd9e1c60)
 
 Поды и ноды кластера доступны и находятся в состоянии готовности.
 
