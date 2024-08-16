@@ -192,55 +192,46 @@ Cоздаю директорию для хранения файла конфиг
 
 Подключаюсь к master-node, создаю namespace monitoring:
 
-![изображение](https://github.com/user-attachments/assets/4fbb7c49-3f03-4f34-ab0b-e374e6b9ded8)
+![изображение](https://github.com/user-attachments/assets/d89edbae-36bd-4ab8-9d24-20f43a82ea0b)
 
 добавляю и обновляю helm репозиторий prometheus-community:
 
-![изображение](https://github.com/user-attachments/assets/1c858795-d401-409a-932c-5a330842830a)
+![изображение](https://github.com/user-attachments/assets/c698b7bc-8d1b-4308-bf83-eb81baced070)
 
 Устанавливаю helm репозиторий и проверяю:
 
-![изображение](https://github.com/user-attachments/assets/e362835e-e704-438d-bcc8-17b3268877c9)
+![изображение](https://github.com/user-attachments/assets/23c59266-7d2d-4a7d-9ab5-caba4a0b9283)
 
-![изображение](https://github.com/user-attachments/assets/1e3bd1dd-22dd-4bb3-b3e6-50b931413979)
+![изображение](https://github.com/user-attachments/assets/2dad785a-47a7-4d82-a194-d8c26e52a4a5)
 
-![изображение](https://github.com/user-attachments/assets/dc1d2faf-6696-4deb-88af-d692a502d842)
+![изображение](https://github.com/user-attachments/assets/b29e3537-2ece-4f7e-9cf6-89c41497506f)
+
 
 Вижу, что сервисы stable-grafana и stable-kube-prometheus-sta-prometheus имеют формат ClusterIP и не будут мне доступны из интернета, поэтому меняю им значения на NodePort:
 
 stable-grafana:
 
-![изображение](https://github.com/user-attachments/assets/259d8cdb-b65f-4bf6-a9ef-daa2e114dcd6)
+![изображение](https://github.com/user-attachments/assets/9d462716-b7ad-4b3d-80bc-a4e07cae22c7)
 
 stable-kube-prometheus-sta-prometheus:
 
-![изображение](https://github.com/user-attachments/assets/0418d8b1-4c99-4fc0-8e31-ffeb7d084887)
+![изображение](https://github.com/user-attachments/assets/7723e639-51fc-41d7-89f8-92f3d032b5a9)
+
 
 Результат:
 
-![изображение](https://github.com/user-attachments/assets/d0d7dfb0-b6fd-491e-a939-458f873da4a9)
+![изображение](https://github.com/user-attachments/assets/30e71d3c-61b5-4fe6-96a5-0663b8bfaf8e)
+
 
 Проверяю:
 
 Grafana:
 
-![изображение](https://github.com/user-attachments/assets/6fc9be41-3b51-48ad-9373-91dbe2d75cd6)
+![изображение](https://github.com/user-attachments/assets/2a83a1c2-9206-42e3-a1a1-a5bd7264a286)
 
 Prometheus:
 
-![изображение](https://github.com/user-attachments/assets/426391c5-f143-4279-91c2-84f39fe10b6a)
-
-
-
-
-
-
-
-
-
-
-
-
+![изображение](https://github.com/user-attachments/assets/94ac48f6-0f97-477e-b5bf-b213d50e9172)
 
 ---
 ### Установка и настройка CI/CD
