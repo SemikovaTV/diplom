@@ -152,7 +152,7 @@ Cоздаю директорию для хранения файла конфиг
 
 ![изображение](https://github.com/user-attachments/assets/0b40dc7d-ca9b-4650-95df-8a30a17176fd)
 
-![image](https://github.com/user-attachments/assets/d393adae-badd-4f66-a4dd-4e52a36b6f9e)
+![изображение](https://github.com/user-attachments/assets/ffe112c4-0016-4225-b6be-d5a6e46ae38e)
 
 ![image](https://github.com/user-attachments/assets/12337051-7bc8-4fbb-84a8-64f024b33094)
 
@@ -255,7 +255,7 @@ ubuntu@master:~$ kubectl create secret generic regcred --from-file=.dockerconfig
 secret/regcred created
 ```
 
-Пишу deployment.yaml:
+Пишу манифест deployment.yaml:
 
 ```
 apiVersion: apps/v1
@@ -299,6 +299,40 @@ spec:
 Подключусь к поду и проверю, что приложение работает:
 
 ![изображение](https://github.com/user-attachments/assets/325f76e2-b30f-415c-a7b7-79981174cc53)
+
+Теперь напишу манифест сервиса с типом NodePort для доступа к приложению извне:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  namespace: testapp
+spec:
+  type: NodePort
+  selector:
+    app: web
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 31122
+```
+Применяю и проверяю:
+```
+ubuntu@master:~$ kubectl apply -f svc.yaml -n testapp 
+service/web-service created
+ubuntu@master:~$ kubectl get service -n testapp 
+NAME          TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+web-service   NodePort   10.233.22.203   <none>        80:31122/TCP   16s
+```
+Проверяю на нодах:
+
+![изображение](https://github.com/user-attachments/assets/5ff41fe2-438a-4c60-9560-ac30acee6a54)
+
+![изображение](https://github.com/user-attachments/assets/03ae10ed-1bcb-4cd6-85ee-853727b3b0d7)
+
+Приложение доступно на всех нодах кластера.
+
+
 
 
 
