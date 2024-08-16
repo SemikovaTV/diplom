@@ -207,13 +207,23 @@ Cоздаю директорию для хранения файла конфиг
 ![изображение](https://github.com/user-attachments/assets/b29e3537-2ece-4f7e-9cf6-89c41497506f)
 
 
-Вижу, что сервисы stable-grafana и stable-kube-prometheus-sta-prometheus имеют формат ClusterIP и не будут мне доступны из интернета, поэтому меняю им значения на NodePort:
+Вижу, что сервисы stble-grafana и stble-kube-prometheus-stac-prometheus имеют формат ClusterIP и не будут мне доступны из интернета, поэтому меняю им значения на NodePort:
 
-stable-grafana:
+stble-grafana:
+```
+ubuntu@master:~$ kubectl edit svc stble-grafana -n monitoring
+service/stble-grafana edited
+```
 
 ![изображение](https://github.com/user-attachments/assets/9d462716-b7ad-4b3d-80bc-a4e07cae22c7)
 
-stable-kube-prometheus-sta-prometheus:
+
+stale-kube-prometheus-stac-prometheus:
+
+```
+ubuntu@master:~$ kubectl edit svc stble-kube-prometheus-stac-prometheus -n monitoring
+service/stble-kube-prometheus-stac-prometheus edited
+```
 
 ![изображение](https://github.com/user-attachments/assets/7723e639-51fc-41d7-89f8-92f3d032b5a9)
 
@@ -232,6 +242,65 @@ Grafana:
 Prometheus:
 
 ![изображение](https://github.com/user-attachments/assets/94ac48f6-0f97-477e-b5bf-b213d50e9172)
+
+После настройки системы монтиторинга перехожу к к деплою тестового приложения:
+
+Создаю namespace:
+
+![изображение](https://github.com/user-attachments/assets/f61540e5-6541-4f70-84b2-a00aa831a0d0)
+
+Поскольку я использую Yandex Container Registry - создам secret и передам кластеру данные для авторизации:
+```
+ubuntu@master:~$ kubectl create secret generic regcred --from-file=.dockerconfigjson=.docker/config.json  --type=kubernetes.io/dockerconfigjson -n testapp 
+secret/regcred created
+```
+
+Пишу deployment.yaml:
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: testapp
+  labels:
+    app: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: cr.yandex/crp0vhgidss6m2b770o3/myapp:test
+        resources:
+          requests:
+            cpu: "1"
+            memory: "200Mi"
+          limits:
+            cpu: "2"
+            memory: "400Mi"
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred
+```
+Применяю конфигурацию и проверяю, что поды запущены:
+
+![изображение](https://github.com/user-attachments/assets/d1156dad-5246-4435-86ce-ffaf714b41ff)
+
+![изображение](https://github.com/user-attachments/assets/92c15733-d5b9-4301-924d-90af7577c498)
+
+Подключусь к поду и проверю, что приложение работает:
+
+![изображение](https://github.com/user-attachments/assets/325f76e2-b30f-415c-a7b7-79981174cc53)
+
+
 
 ---
 ### Установка и настройка CI/CD
