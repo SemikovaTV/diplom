@@ -358,13 +358,31 @@ web-service   NodePort   10.233.22.203   <none>        80:31122/TCP   16s
 
 Для выполнения данного задания буду использоавть Jenkins.
 
-Устанавливаю и запускаю сервис:
+![image](https://github.com/user-attachments/assets/86d1757e-892b-4025-a089-f16e07e70ce9)
 
-![image](https://github.com/user-attachments/assets/dde49f47-1144-4ec4-b948-e4ef53707e50)
+![image](https://github.com/user-attachments/assets/65bf412b-58a2-4515-9bd6-2345fabdb475)
 
-Интерфейс Jenkins доступен по адресу хоста:
+![image](https://github.com/user-attachments/assets/342f43c8-9821-4c41-934b-f3b6427e679d)
 
-![image](https://github.com/user-attachments/assets/d41b84af-3bbd-41e8-becb-b46f0396e02c)
+![image](https://github.com/user-attachments/assets/f18cba9c-430e-4e25-a542-1e684f83a42d)
+
+![Без имени](https://github.com/user-attachments/assets/72abead6-0d8a-4976-bf72-d3b05b7d56f8)
+
+```
+ubuntu@master:~$ kubectl create namespace runner
+namespace/runner created
+```
+
+```
+ubuntu@master:~$ kubectl --namespace=runner create secret generic runner-secret --from-literal=runner-registration-token="gitlab_token" --from-literal=runner-token="gitlab_token"
+```
+![image](https://github.com/user-attachments/assets/0ea322e3-719f-4f53-8059-7ca28d49d4b1)
+
+```
+
+
+
+
 
 
 ---
