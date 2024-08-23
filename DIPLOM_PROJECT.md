@@ -379,6 +379,14 @@ ubuntu@master:~$ kubectl --namespace=runner create secret generic runner-secret 
 ![image](https://github.com/user-attachments/assets/0ea322e3-719f-4f53-8059-7ca28d49d4b1)
 
 ```
+Создам файл values.yml (добавь ссылку)
+
+![image](https://github.com/user-attachments/assets/de15c3cb-fe55-48ca-be78-ee739acabfa3)
+
+![image](https://github.com/user-attachments/assets/fc02f968-6116-48c5-8177-ce958444d7a0)
+
+![image](https://github.com/user-attachments/assets/2bcad30f-9bbb-40a4-bf58-2e29ce76b896)
+
 
 
 
