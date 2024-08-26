@@ -364,8 +364,6 @@ web-service   NodePort   10.233.22.203   <none>        80:31122/TCP   16s
 
 ![image](https://github.com/user-attachments/assets/342f43c8-9821-4c41-934b-f3b6427e679d)
 
-![image](https://github.com/user-attachments/assets/f18cba9c-430e-4e25-a542-1e684f83a42d)
-
 ![Без имени](https://github.com/user-attachments/assets/72abead6-0d8a-4976-bf72-d3b05b7d56f8)
 
 ```
@@ -384,7 +382,8 @@ ubuntu@master:~$ kubectl --namespace=runner create secret generic runner-secret 
 
 ![image](https://github.com/user-attachments/assets/fc02f968-6116-48c5-8177-ce958444d7a0)
 
-![image](https://github.com/user-attachments/assets/2bcad30f-9bbb-40a4-bf58-2e29ce76b896)
+![image](https://github.com/user-attachments/assets/fc514a5b-42e3-440c-80e2-3df5663b75d5)
+
 
 
 
