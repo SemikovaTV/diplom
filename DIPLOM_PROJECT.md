@@ -144,28 +144,28 @@ Cоздаю директорию для хранения файла конфиг
 
 1. Git репозиторий с тестовым приложением и Dockerfile.
 2. Регистри с собранным docker image. В качестве регистри может быть DockerHub или [Yandex Container Registry](https://cloud.yandex.ru/services/container-registry), созданный также с помощью terraform.
-3. 
 
+### Ответ
 
+1. Пишу Dockerfile:
+```
+FROM nginx:1.24.0
+RUN rm -rf /usr/share/nginx/html/*
+COPY content/ /usr/share/nginx/html/
+EXPOSE 80
+```
 
+2.Создаю образ Docker:
+![image](https://github.com/user-attachments/assets/8d958a1e-dfc0-4deb-8994-b60098595879)
 
+7. Загружаю готовый образ на Dockerhub:
+![image](https://github.com/user-attachments/assets/cfc7c56a-4331-428d-9df0-8693d52b8c4a)
 
-![изображение](https://github.com/user-attachments/assets/0b40dc7d-ca9b-4650-95df-8a30a17176fd)
+3.Проверяю:
 
-![изображение](https://github.com/user-attachments/assets/ffe112c4-0016-4225-b6be-d5a6e46ae38e)
-
-![image](https://github.com/user-attachments/assets/12337051-7bc8-4fbb-84a8-64f024b33094)
-
-![image](https://github.com/user-attachments/assets/061e21e4-1d5a-47dc-9474-efce88ee9fba)
-
-
-![image](https://github.com/user-attachments/assets/47edca0f-54e9-4afe-8d9e-72ed0b7d6623)
-
+![image](https://github.com/user-attachments/assets/4092072d-c285-43f5-b656-30a6920cbb1f)
 
 [Git репозиторий с тестовым приложением и Dockerfile](https://github.com/SemikovaTV/test_app)
-
-
-
 
 ---
 ### Подготовка cистемы мониторинга и деплой приложения
