@@ -249,12 +249,6 @@ Prometheus:
 
 ![изображение](https://github.com/user-attachments/assets/f61540e5-6541-4f70-84b2-a00aa831a0d0)
 
-Поскольку я использую Yandex Container Registry - создам secret и передам кластеру данные для авторизации:
-```
-ubuntu@master:~$ kubectl create secret generic regcred --from-file=.dockerconfigjson=.docker/config.json  --type=kubernetes.io/dockerconfigjson -n testapp 
-secret/regcred created
-```
-
 Пишу манифест deployment.yaml:
 
 ```
@@ -277,7 +271,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: cr.yandex/crp0vhgidss6m2b770o3/myapp:test
+        image: tvladimirova965/testapp:0.1
         resources:
           requests:
             cpu: "1"
@@ -287,8 +281,7 @@ spec:
             memory: "400Mi"
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: regcred
+
 ```
 Применяю конфигурацию и проверяю, что поды запущены:
 
@@ -331,10 +324,6 @@ web-service   NodePort   10.233.22.203   <none>        80:31122/TCP   16s
 ![изображение](https://github.com/user-attachments/assets/03ae10ed-1bcb-4cd6-85ee-853727b3b0d7)
 
 Приложение доступно на всех нодах кластера.
-
-
-
-
 
 ---
 ### Установка и настройка CI/CD
