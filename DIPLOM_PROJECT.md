@@ -397,6 +397,36 @@ ubuntu@master:~$ kubectl --namespace=runner create secret generic runner-secret 
 
 ![image](https://github.com/user-attachments/assets/e3061ae2-3bd7-48fa-80fa-8970f7543ea3)
 
+Исходная страница сайта:
+
+![image](https://github.com/user-attachments/assets/52b15211-dde1-402c-b9f0-c56a04f08dd8)
+
+Вношу изменения в репозиторий и отправляю в Git:
+
+![image](https://github.com/user-attachments/assets/7ade4886-ea7e-49fb-939f-4a4bc166001a)
+
+![image](https://github.com/user-attachments/assets/d75cfbbf-6f9d-4180-a77e-6b5dcee6a1cc)
+
+Вижу, что pipeline запустился:
+
+![image](https://github.com/user-attachments/assets/9a55b501-07bd-4f0d-9699-b7beb0ccd081)
+
+Проверяю DockerHub, вижу что новый образ загрузился с новым тэгом:
+
+![image](https://github.com/user-attachments/assets/b5565042-4723-44c7-b8f4-2aaa4860ffc8)
+
+Через время pipeline завершился без ошибок:
+
+![image](https://github.com/user-attachments/assets/5a3f8dba-4454-4e39-b9a3-f1ea574f2118)
+
+Проверяю страницу сайта:
+
+![image](https://github.com/user-attachments/assets/3821f8b1-7c07-450b-bfab-ed2460a703a1)
+
+Вижу, что изменения внесены успешно.
+
+
+
 
 
 
