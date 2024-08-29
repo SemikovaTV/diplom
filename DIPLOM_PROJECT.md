@@ -345,33 +345,57 @@ web-service   NodePort   10.233.22.203   <none>        80:31122/TCP   16s
 
 ### Ответ
 
-Для выполнения данного задания буду использоавть Jenkins.
+Для выполнения данного задания буду использоавть GitLab.
+
+Создаю новый пустой проект с именем testapp:
 
 ![image](https://github.com/user-attachments/assets/86d1757e-892b-4025-a089-f16e07e70ce9)
 
+Отправляю файлы своего приложения в новый проект на GitLab:
+
 ![image](https://github.com/user-attachments/assets/65bf412b-58a2-4515-9bd6-2345fabdb475)
+
+Проверяю:
 
 ![image](https://github.com/user-attachments/assets/342f43c8-9821-4c41-934b-f3b6427e679d)
 
+Для автоматизации процесса CI/CD мне нужен GitLab Runner, который будет выполнять задачи, указанные в файле .gitlab-ci.yml.
+Для этого создаю на странице настроек проекта свой runner, получаю данные, которые необходимы мне для аутентификации runner'а в проекте:
+
 ![Без имени](https://github.com/user-attachments/assets/72abead6-0d8a-4976-bf72-d3b05b7d56f8)
+
+Создаю отдельный namespace для gitlab-runner'a
 
 ```
 ubuntu@master:~$ kubectl create namespace runner
 namespace/runner created
 ```
+Создаю secret, в который передам данные для аутентификации моего runner'a:
+```
+ubuntu@master:~$ kubectl --namespace=runner create secret generic runner-secret --from-literal=runner-registration-token="runner_token" --from-literal=runner-token="runner_token"
+```
 
-```
-ubuntu@master:~$ kubectl --namespace=runner create secret generic runner-secret --from-literal=runner-registration-token="gitlab_token" --from-literal=runner-token="gitlab_token"
-```
 ![image](https://github.com/user-attachments/assets/0ea322e3-719f-4f53-8059-7ca28d49d4b1)
 
-Создам файл values.yml (добавь ссылку)
+Создаю файл [values.yml](https://github.com/SemikovaTV/diplom/blob/main/gitlab_runner/values.yml)
+
+Для установки буду использовать helm:
 
 ![image](https://github.com/user-attachments/assets/de15c3cb-fe55-48ca-be78-ee739acabfa3)
 
+Проверяю:
+
 ![image](https://github.com/user-attachments/assets/fc02f968-6116-48c5-8177-ce958444d7a0)
 
+Проверяю на странице проекта подключен ли мой runner:
+
 ![image](https://github.com/user-attachments/assets/fc514a5b-42e3-440c-80e2-3df5663b75d5)
+
+Пишу конфигурационный файл [.gitlab.ci.yml](https://gitlab.com/SemikovaTV/testapp/-/blob/main/.gitlab-ci.yml?ref_type=heads)
+
+Также в настройках проекта указываю переменные, которые не хочу хранить в открытом виде - данные для регистрации на DockerHub, файл конфигурации кластера - kubeconfig, а также имя образа, который использую, пространство имен, в котором работает мое приложение и само имя приложения:
+
+![image](https://github.com/user-attachments/assets/e3061ae2-3bd7-48fa-80fa-8970f7543ea3)
 
 
 
