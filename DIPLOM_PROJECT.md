@@ -154,6 +154,10 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY content/ /usr/share/nginx/html/
 EXPOSE 80
 ```
+2.Пишу статическую страницу index.html:
+
+![image](https://github.com/user-attachments/assets/910f9909-131b-49de-a84b-760b9d0195a2)
+
 
 2.Создаю образ Docker:
 ![image](https://github.com/user-attachments/assets/8d958a1e-dfc0-4deb-8994-b60098595879)
@@ -194,7 +198,7 @@ EXPOSE 80
 
 ![изображение](https://github.com/user-attachments/assets/d89edbae-36bd-4ab8-9d24-20f43a82ea0b)
 
-добавляю и обновляю helm репозиторий prometheus-community:
+Добавляю и обновляю helm репозиторий prometheus-community:
 
 ![изображение](https://github.com/user-attachments/assets/c698b7bc-8d1b-4308-bf83-eb81baced070)
 
