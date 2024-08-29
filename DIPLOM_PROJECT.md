@@ -442,9 +442,9 @@ ubuntu@master:~$ kubectl --namespace=runner create secret generic runner-secret 
 ## Что необходимо для сдачи задания?
 
 1. Репозиторий с конфигурационными файлами Terraform и готовность продемонстрировать создание всех ресурсов с нуля.
-2. Пример pull request с комментариями созданными atlantis'ом или снимки экрана из Terraform Cloud или вашего CI-CD-terraform pipeline.
-3. Репозиторий с конфигурацией ansible, если был выбран способ создания Kubernetes кластера при помощи ansible.
-4. Репозиторий с Dockerfile тестового приложения и ссылка на собранный docker image.
-5. Репозиторий с конфигурацией Kubernetes кластера.
-6. Ссылка на тестовое приложение и веб интерфейс Grafana с данными доступа.
+[ter](https://github.com/SemikovaTV/diplom/tree/main/ter)
+2. Репозиторий с конфигурацией ansible, если был выбран способ создания Kubernetes кластера при помощи ansible - установка производилась при помощи kubespray: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray)
+3. Репозиторий с Dockerfile тестового приложения и ссылка на собранный docker image - [testapp](https://github.com/SemikovaTV/test_app), ссылка на [image](https://hub.docker.com/layers/tvladimirova965/testapp/1.0/images/sha256-52115351fb6ba9950008ad9382cb1c8e6ca3c8e991539b0f619e4edc1c214811?context=repo) 
+5. Репозиторий с конфигурацией Kubernetes кластера - для установки системы мониторинга был использован helm репозиторий prometheus-community, deployment  и service приложения - [kuber](https://github.com/SemikovaTV/diplom/tree/main/kuber),
+6. Ссылка на тестовое приложение - [testapp](http://89.169.169.85:31122/) и веб интерфейс Grafana с данными доступа - [grafana}(http://51.250.14.233:30382) login - admin, passwd - prom-operator
 7. Все репозитории рекомендуется хранить на одном ресурсе (github, gitlab)
