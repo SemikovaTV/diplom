@@ -381,7 +381,7 @@ ubuntu@master:~$ kubectl --namespace=runner create secret generic runner-secret 
 
 ![image](https://github.com/user-attachments/assets/0ea322e3-719f-4f53-8059-7ca28d49d4b1)
 
-Создаю файл [values.yml](https://github.com/SemikovaTV/diplom/blob/main/gitlab_runner/values.yml)
+Создаю файл [values.yml](https://github.com/SemikovaTV/diplom/blob/main/values_for_helm-runner/values.yaml)
 
 Для установки буду использовать helm:
 
@@ -428,15 +428,6 @@ ubuntu@master:~$ kubectl --namespace=runner create secret generic runner-secret 
 ![image](https://github.com/user-attachments/assets/3821f8b1-7c07-450b-bfab-ed2460a703a1)
 
 Вижу, что изменения внесены успешно.
-
-
-
-
-
-
-
-
-
 
 ---
 ## Что необходимо для сдачи задания?
