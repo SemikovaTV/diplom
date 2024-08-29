@@ -159,13 +159,13 @@ EXPOSE 80
 ![image](https://github.com/user-attachments/assets/910f9909-131b-49de-a84b-760b9d0195a2)
 
 
-2.Создаю образ Docker:
+3.Создаю образ Docker:
 ![image](https://github.com/user-attachments/assets/8d958a1e-dfc0-4deb-8994-b60098595879)
 
-3. Загружаю готовый образ на Dockerhub:
+4. Загружаю готовый образ на Dockerhub:
 ![image](https://github.com/user-attachments/assets/cfc7c56a-4331-428d-9df0-8693d52b8c4a)
 
-4.Проверяю:
+5.Проверяю:
 
 ![image](https://github.com/user-attachments/assets/4092072d-c285-43f5-b656-30a6920cbb1f)
 
