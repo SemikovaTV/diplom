@@ -71,6 +71,26 @@ kubectl v1.30.0
 
 ![изображение](https://github.com/user-attachments/assets/22033844-1836-42d3-8ac1-511f0ea4479a)
 
+Чтобы S3 bucket использовался в качестве backend пишу следующий конфиг:
+
+```
+terraform {
+  backend "s3" {
+    endpoint = "https://storage.yandexcloud.net"
+    region   = "ru-central1"
+    bucket   = "bucket-terraform"
+    key      = "ter/terraform.tfstate"
+    access_key = "YCA..."
+    secret_key = "YCOWQ4..."
+    skip_region_validation = true
+    skip_credentials_validation = true
+  }
+}
+```
+Применяю:
+
+![image](https://github.com/user-attachments/assets/968873e1-eddc-4a4c-a528-5f8cf24a07a9)
+
 3. Создаю VPC с подсетями в разных зонах доступности:
 
 ![image](https://github.com/user-attachments/assets/3d4cea6f-3d9c-45cd-8d4f-1b209971ca94)
