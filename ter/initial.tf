@@ -1,14 +1,11 @@
-resource "yandex_compute_instance" "node" {
-  name        = "node-${count.index + 1}"
-  count = 2
-  platform_id = "standard-v2"
-  zone = element(var.node_zones, count.index)
+resource "yandex_compute_instance" "initial_vm" {
+  name        = "initial-vm"
+ platform_id = "standard-v1"
   resources {
     cores         = 4
     memory        = 4
     core_fraction = 5
    }
-
   boot_disk {
     initialize_params {
       image_id = data.yandex_compute_image.ubuntu.image_id
@@ -23,7 +20,7 @@ resource "yandex_compute_instance" "node" {
   }
 
   network_interface {
-    subnet_id = element([yandex_vpc_subnet.subnet2.id, yandex_vpc_subnet.subnet3.id], count.index)
+    subnet_id = yandex_vpc_subnet.subnet1.id
     nat       = true
   }
   scheduling_policy {

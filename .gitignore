@@ -1,0 +1,6 @@
+*.tfstate
+*.tfstate.*
+**/.terraform/*
+cloudvars.tf
+*.lock.hcl
+*.lock.hcl.*

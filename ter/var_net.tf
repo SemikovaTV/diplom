@@ -52,3 +52,13 @@ variable "subnet3" {
   default     = "subnet3-diplom"
   description = "subnet name"
 }
+
+variable "subnets" {
+  type        = list(string)
+  default     = ["subnet2-diplom", "subnet3-diplom"]
+}
+
+variable "node_zones" {
+  type        = list(string)
+  default     = ["ru-central1-b", "ru-central1-d"]
+}
