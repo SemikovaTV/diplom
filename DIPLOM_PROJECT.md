@@ -349,6 +349,44 @@ web-service   NodePort   10.233.22.203   <none>        80:31122/TCP   16s
 
 Приложение доступно на всех нодах кластера.
 
+### Доработка:
+
+Устанавливаю ingress-контроллер:
+
+![image](https://github.com/user-attachments/assets/d8e2375b-0e2d-4dc1-ad98-6a95a8d7f97a)
+
+Настраиваю контроллер для экспорта показателей:
+
+![image](https://github.com/user-attachments/assets/4a444db4-9027-4f06-88df-e9dc85ec07a2)
+
+Проверяю:
+
+![image](https://github.com/user-attachments/assets/032d8cc7-25c9-4a89-9a75-7aa6f23d5468)
+
+Устанавливаю prometheus:
+
+![image](https://github.com/user-attachments/assets/27f14218-ef2b-4893-927b-1920b7b61c0c)
+
+Смотрю на каком порту мне будет доступен prometheus:
+
+![image](https://github.com/user-attachments/assets/1032ae25-9203-4e67-9d3c-c48e5c4547e2)
+
+Проверяю:
+
+![image](https://github.com/user-attachments/assets/0adba13e-0e15-4c94-99da-0540514418fd)
+
+Устанавливаю Grafana:
+
+![image](https://github.com/user-attachments/assets/16b3b5bd-2da1-4797-8db5-18e5f378e28f)
+
+Проверяю сервисы:
+
+![image](https://github.com/user-attachments/assets/864c4ad1-4377-4ee0-98c5-6fe55a6b6e9e)
+
+Проверяю доступ к grafana:
+
+![image](https://github.com/user-attachments/assets/2f6c5902-b496-492c-8beb-04b8fd86fbe7)
+
 ---
 ### Установка и настройка CI/CD
 
