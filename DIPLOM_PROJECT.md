@@ -389,6 +389,100 @@ web-service   NodePort   10.233.22.203   <none>        80:31122/TCP   16s
 
 ![image](https://github.com/user-attachments/assets/2f6c5902-b496-492c-8beb-04b8fd86fbe7)
 
+Делаю ingress-nginx-controller сервисом типа NodePort
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-nginx-controller
+  namespace: ingress-nginx
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: http
+    protocol: TCP
+    nodePort: 30080 
+  - port: 443
+    targetPort: https
+    protocol: TCP
+    nodePort: 30443  
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+```
+
+Проверяю:
+
+```
+NAME                       TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)                      AGE
+ingress-nginx-controller   NodePort   10.233.55.32   <none>        80:30080/TCP,443:30443/TCP   5h7m
+```
+
+Создаю ingress:
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: monitoring.com
+    http:
+      paths:
+      - path: /grafana
+        pathType: Prefix
+        backend:
+          service:
+            name: grafana
+            port:
+              number: 3000
+      - path: /prom
+        pathType: Prefix
+        backend:
+          service:
+            name: prometheus-server
+            port:
+              number: 9090
+```
+Проверяю:
+
+```
+NAME            CLASS   HOSTS            ADDRESS        PORTS   AGE
+ingress-nginx   nginx   monitoring.com   10.233.55.32   80      3h37m
+```
+Вижу, что ingress получил адрес сервиса.
+
+Редактирую файл /etc/hosts, вписываю ip ingress-nginx-controller как доменной имя monitoring.com :
+```
+10.233.55.32 monitoring.com
+```
+
+curl по внешнему ip:
+```
+ubuntu@master:~$ curl http://89.169.144.103:32454
+<a href="/graph">Found</a>.
+```
+curl по доменному имени:
+```
+ubuntu@master:~$ curl http://monitoring.com/prom
+<a href="/graph">Found</a>.
+```
+лог ingress:
+```
+10.233.97.128 - - [09/Sep/2024:17:30:25 +0000] "GET /prom HTTP/1.1" 302 29 "-" "curl/7.68.0" 82 0.018 [ingress-nginx-prometheus-server-9090] [] 10.233.102.138:9090 29 0.018 302 3897b7f70db123a47dce75a15ae2a4ec
+```
+ Вижу, что контроллер перенаправляет трафик.
+
+
+
+
+
 ---
 ### Установка и настройка CI/CD
 
