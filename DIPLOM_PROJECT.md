@@ -351,6 +351,8 @@ web-service   NodePort   10.233.22.203   <none>        80:31122/TCP   16s
 
 ### Доработка:
 
+Использовала официальную документацию [https://kubernetes.github.io/ingress-nginx/user-guide/monitoring/](https://kubernetes.github.io/ingress-nginx/user-guide/monitoring/)
+
 Устанавливаю ingress-контроллер:
 
 ![image](https://github.com/user-attachments/assets/d8e2375b-0e2d-4dc1-ad98-6a95a8d7f97a)
