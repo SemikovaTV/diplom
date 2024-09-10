@@ -4,8 +4,8 @@ resource "yandex_compute_instance" "node" {
   platform_id = "standard-v2"
   zone = element(var.node_zones, count.index)
   resources {
-    cores         = 4
-    memory        = 4
+    cores         = 2
+    memory        = 2
     core_fraction = 5
    }
 
@@ -18,7 +18,7 @@ resource "yandex_compute_instance" "node" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${var.ssh_key}"
+    ssh-keys = "ubuntu:${file("~/.ssh/id_ed25519.pub")}"
     serial-port-enable = "1"
   }
 

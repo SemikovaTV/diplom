@@ -2,7 +2,7 @@ data "yandex_compute_image" "ubuntu" {
   family = "ubuntu-2004-lts"
 }
 
-resource "yandex_compute_instance" "master-node" {
+resource "yandex_compute_instance" "master" {
   name        = "master"
   platform_id = "standard-v1"
   resources {
@@ -20,7 +20,7 @@ resource "yandex_compute_instance" "master-node" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${var.ssh_key}"
+    ssh-keys = "ubuntu:${file("~/.ssh/id_ed25519.pub")}"
     serial-port-enable = "1"
   }
 

@@ -11,30 +11,12 @@ resource "yandex_storage_bucket" "bucket-terraform" {
     bucket = "bucket-terraform"
     acl    = "private"
     force_destroy = true
+
+provisioner "local-exec" {
+  command = "echo export ACCESS_KEY=${yandex_iam_service_account_static_access_key.sa-static-key.access_key} > /home/stv/ter/backend.tfvars"
 }
 
-// Create "local_file" for "backendConf"
-resource "local_file" "backendConf" {
-  content  = <<EOT
-endpoint = "storage.yandexcloud.net"
-bucket = "${yandex_storage_bucket.bucket-terraform.bucket}"
-region = "ru-central1"
-key = "terraform/terraform.tfstate"
-access_key = "${yandex_iam_service_account_static_access_key.sa-static-key.access_key}"
-secret_key = "${yandex_iam_service_account_static_access_key.sa-static-key.secret_key}"
-skip_region_validation = true
-skip_credentials_validation = true
-EOT
-  filename = "../backend.key"
+provisioner "local-exec" {
+  command = "echo export SECRET_KEY=${yandex_iam_service_account_static_access_key.sa-static-key.secret_key} >> /home/stv/ter/backend.tfvars"
 }
-
-// Add "tfstate" to bucket
-resource "yandex_storage_object" "object-1" {
-    access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
-    secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
-    bucket = yandex_storage_bucket.bucket-terraform.bucket
-    key = "terraform.tfstate"
-    source = "/home/stv/ter/terraform.tfstate"
-    acl    = "private"
-    depends_on = [yandex_storage_bucket.bucket-terraform]
 }
